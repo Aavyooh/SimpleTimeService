@@ -90,11 +90,6 @@ docker --version
 
 
 ```
-
-
----
----
-
 ## Clone the Repository
 
 ```bash
