@@ -50,8 +50,6 @@ Verify:
 git --version
 ```
 
----
-
 ### 2. Python 3.9+
 
 Required to run the application locally (without Docker).
@@ -64,9 +62,6 @@ Verify:
 python --version
 ```
 
-> ⚠️ Make sure Python is added to your system PATH.
-
----
 
 ### 3. Flask (Python Framework)
 
@@ -78,7 +73,6 @@ No manual installation is needed if you run:
 pip install -r requirements.txt
 ```
 
----
 
 ### 4. Docker
 
@@ -97,24 +91,8 @@ docker --version
 
 ```
 
----
-
-### 2. Docker
-
-Used to build and run the container.
-
-* [https://docs.docker.com/get-docker/](https://docs.docker.com/get-docker/)
-
-Verify:
-
-```bash
-docker --version
-```
-
-> ⚠️ Make sure Docker Desktop is **running** before continuing.
 
 ---
-
 ---
 
 ## Clone the Repository
@@ -124,7 +102,6 @@ git clone https://github.com/Aavyooh/SimpleTimeService
 cd <REPOSITORY_NAME>
 ```
 
----
 
 ## Run the Application Using Docker 
 
