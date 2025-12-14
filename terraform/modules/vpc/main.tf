@@ -15,7 +15,7 @@ resource "aws_subnet" "public" {
   tags = { Name = "${var.env}-public-${count.index}" }
 }
 
-# Private subnets (ECS + RDS)
+# Private subnets (ECS)
 resource "aws_subnet" "private" {
   count             = 2
   vpc_id            = aws_vpc.main.id
@@ -29,7 +29,11 @@ resource "aws_internet_gateway" "igw" {
   vpc_id = aws_vpc.main.id
 }
 
-resource "aws_eip" "nat" { count = 2 }
+resource "aws_eip" "nat" { 
+  count = 2  
+}
+
+
 resource "aws_nat_gateway" "nat" {
   count         = 2
   allocation_id = aws_eip.nat[count.index].id
