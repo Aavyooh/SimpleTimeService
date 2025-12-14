@@ -1,3 +1,4 @@
+################ VPC ###############
 resource "aws_vpc" "main" {
   cidr_block       = var.vpc_cidr
   enable_dns_hostnames = true
@@ -5,7 +6,7 @@ resource "aws_vpc" "main" {
   tags = { Name = "${var.env}-vpc" }
 }
 
-# Public subnets (ALB)
+############### Public subnets (ALB) ###############
 resource "aws_subnet" "public" {
   count                   = 2
   vpc_id                  = aws_vpc.main.id
@@ -15,7 +16,7 @@ resource "aws_subnet" "public" {
   tags = { Name = "${var.env}-public-${count.index}" }
 }
 
-# Private subnets (ECS)
+############### Private subnets (ECS) ###############
 resource "aws_subnet" "private" {
   count             = 2
   vpc_id            = aws_vpc.main.id
@@ -24,7 +25,8 @@ resource "aws_subnet" "private" {
   tags = { Name = "${var.env}-private-${count.index}" }
 }
 
-# Internet Gateway, NAT, Route Tables (full working networking)
+############### Internet Gateway, NAT, Route Tables ############
+
 resource "aws_internet_gateway" "igw" {
   vpc_id = aws_vpc.main.id
 }

@@ -1,3 +1,5 @@
+################ ECS Service ###############
+
 resource "aws_ecs_service" "this" {
   name            = var.ecs_service_name
   cluster         = var.ecs_cluster_arn
