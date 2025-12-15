@@ -61,7 +61,7 @@ module "ecs_task_definition" {
   task_role_arn      = module.ecs_iam.ecs_task_role_arn
 
   container_name  = "sts-service"
-  container_image = "nivedanchauhan/simpletimeservice:latest"
+  container_image = var.repository_url
   container_port  = 8080
 
   log_group         = "/ecs/sts"

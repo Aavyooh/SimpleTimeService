@@ -5,3 +5,5 @@ environment = "dev"
 vpc_cidr = "10.0.0.0/16"
 
 ecs_cluster_name = "simple-time-service"
+
+repository_url = "nivedanchauhan/simpletimeservice:latest"
